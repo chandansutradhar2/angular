@@ -1,18 +1,19 @@
-<div class="login-page">
-    <div class="form">
-        <div class="register-form">
-            <input type="text" placeholder="name" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </div>
-        <div class="login-form">
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
-            <button>login</button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </div>
-        <!-- <app-social-signin></app-social-signin> -->
+<div class="container">
+    <div class="login-container">
+        <mat-card>
+            <form class="form">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Enter Email</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Enter Password</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary">Login</button>
+            </form>
+        </mat-card>
     </div>
 </div>
