@@ -15,6 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { SocialSigninComponent } from './social-signin/social-signin.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     PaymentComponent,
     ProductDetailComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
