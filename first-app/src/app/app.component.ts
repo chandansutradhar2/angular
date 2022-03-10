@@ -1,21 +1,36 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import User from './models/user.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor() {
-    // this.fetchData();
-    // this.transformData();
+  constructor(private http: HttpClient) {
+    //fetch user data based on local storage
+    let user: User = localStorage.getItem('user');
+    //code to connec to server to fetch the user profile
+    http
+      .get(
+        `http://localhost/user/current?userId=${user.id}&password=${user.password}`
+      )
+      .toPromise();
 
-    // this.printData();
+    this.fun1()
+      .then((r) => {
+        //console.log('promise returned'+ r);
+      })
+      .catch((err) => {
+        console.log('proimsed failed with reason', err);
+      })
+      .finally(() => console.log('clean up finally code'));
 
-    this.fun1().then((r) => {
-      console.log('promise returned', r);
-    });
-    this.fun2().subscribe((val) => console.log(val));
+    this.fun2().subscribe(
+      (val) => console.log(val),
+      (err) => {}
+    );
   }
 
   fetchData() {
@@ -35,12 +50,11 @@ export class AppComponent {
     console.log('print data invoked');
   }
 
-  fun1() {
+  fun1(): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      setInterval(() => {
-        console.log('inside setInterval');
-        resolve(Date.now());
-        console.log('after resolve ');
+      setTimeout(() => {
+        resolve(true);
+        //reject('network connection aborted');
       }, 2000);
     });
   }
