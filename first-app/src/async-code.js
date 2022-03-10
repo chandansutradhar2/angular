@@ -43,16 +43,36 @@ function fun5() {
   });
 }
 
-function callingFunction() {
-  fun1().then(() => {
-    fun2().then(() => {
-      fun3().then(() =>
-        fun4().then(() =>
-          fun5().then(() => console.log("all function completed"))
-        )
-      );
-    });
-  });
+function fun6() {
+  setTimeout(() => {
+    console.log("fun6 completed");
+  }, 2000);
+}
+
+function fun7() {
+  setTimeout(() => {
+    console.log("fun7 completed");
+  }, 2000);
+}
+
+async function callingFunction() {
+  await fun1();
+  await fun2();
+  await fun3();
+  await fun4();
+  await fun5();
+  await fun6();
+  await fun7();
+  console.log("this is sync code");
+  //   fun1().then(() => {
+  //     fun2().then(() => {
+  //       fun3().then(() =>
+  //         fun4().then(() =>
+  //           fun5().then(() => console.log("all function completed"))
+  //         )
+  //       );
+  //     });
+  //   });
 }
 
 callingFunction();
