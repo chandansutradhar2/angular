@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {
-    this.fetchData();
-    this.transformData();
-    this.printData();
+    // this.fetchData();
+    // this.transformData();
+
+    // this.printData();
+
+    this.fun1().then((r) => {
+      console.log('promise returned', r);
+    });
+    this.fun2().subscribe((val) => console.log(val));
   }
 
   fetchData() {
@@ -26,5 +33,24 @@ export class AppComponent {
   printData() {
     //print the data into view
     console.log('print data invoked');
+  }
+
+  fun1() {
+    return new Promise((resolve, reject) => {
+      setInterval(() => {
+        console.log('inside setInterval');
+        resolve(Date.now());
+        console.log('after resolve ');
+      }, 2000);
+    });
+  }
+
+  fun2() {
+    return new Observable((obs) => {
+      setInterval(() => {
+        console.log('inside setInterval');
+        obs.next(Date.now());
+      }, 2000);
+    });
   }
 }
