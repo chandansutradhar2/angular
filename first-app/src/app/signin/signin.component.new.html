@@ -1,19 +1,21 @@
 <div class="container">
     <div class="login-container">
-
         <mat-card>
-            <h4>{{title}}</h4>
-            <div class="form">
+            <form class="form">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Enter Email</mat-label>
-                    <input matInput #email>
+                    <input matInput>
                 </mat-form-field>
+
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Enter Password</mat-label>
-                    <input matInput type="password" #password>
+                    <input matInput type="password">
                 </mat-form-field>
-                <button mat-raised-button color="primary" (click)="login(email,password)">Login</button>
-            </div>
+
+                <button mat-raised-button color="primary" (click)="login()">Login</button>
+            </form>
         </mat-card>
     </div>
+
+
 </div>

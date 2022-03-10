@@ -6,9 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
+  title: string = 'Login';
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  login() {}
+  login(ev1: any, ev2: any) {
+    console.log(ev1.value, ev2.value);
+    alert('login invoked');
+  }
+
+  connectToDb() {}
+
+  showSpinner() {}
+
+  hideSpinner() {}
 }
