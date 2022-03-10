@@ -1,6 +1,6 @@
 import { Address } from './address.model';
 
-export interface User {
+interface User {
   id: string;
   firstName: string;
   lastName: string;
@@ -19,17 +19,4 @@ export enum GENDER {
   'FEMALE' = 'FEMALE',
 }
 
-let userObj: User = {
-  gender: GENDER.MALE,
-};
-
-let userObj2: User = {
-  gender: GENDER.MALE,
-};
-
-let userObj3: User = {
-  gender: GENDER.MALE,
-};
-
-if (userObj.gender == 'male') {
-}
+export default User;

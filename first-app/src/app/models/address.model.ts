@@ -1,3 +1,6 @@
+import User from './user.model';
+import { GENDER } from './user.model';
+
 export interface Address {
   addressType: string;
   line1: string;
