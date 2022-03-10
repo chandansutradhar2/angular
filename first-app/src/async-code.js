@@ -1,24 +1,58 @@
-function fetchData() {
+function fun1() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("fetch Data completed");
-      resolve(100);
-    }, 5000);
+      console.log("fun1 completed");
+      resolve();
+    }, 2000);
   });
 }
 
-function transformData(data) {
-  console.log("transforming data recieved", data);
+function fun2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("fun2 completed");
+      resolve();
+    }, 2000);
+  });
 }
 
-function printData() {
-  console.log("print data completed");
+function fun3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("fun3 completed");
+      resolve();
+    }, 2000);
+  });
 }
 
-//promises (recommended)
-//callback (not recommended)
+function fun4() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("fun4 completed");
+      resolve();
+    }, 2000);
+  });
+}
 
-fetchData().then((result) => {
-  transformData(result);
-  printData();
-});
+function fun5() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("fun5 completed");
+      resolve();
+    }, 2000);
+  });
+}
+
+function callingFunction() {
+  fun1().then(() => {
+    fun2().then(() => {
+      fun3().then(() =>
+        fun4().then(() =>
+          fun5().then(() => console.log("all function completed"))
+        )
+      );
+    });
+  });
+}
+
+callingFunction();
