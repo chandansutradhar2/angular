@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
   title: string = 'Login';
+  email!: string;
+  password!: string;
 
   constructor() {}
 
@@ -14,6 +16,9 @@ export class SigninComponent implements OnInit {
 
   login(ev1: any, ev2: any) {
     console.log(ev1.value, ev2.value);
+    this.email = ev1.value;
+    this.password = ev2.value;
+
     alert('login invoked');
   }
 
