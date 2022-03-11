@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
+  products: Product[] = [];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -19,8 +21,9 @@ export class ProductDetailComponent implements OnInit {
           },
         })
         .subscribe(
-          (r) => {
+          (r: any) => {
             console.log('product recieved', r);
+            this.products = r as Product[];
           },
           (err) => console.log(err)
         );
