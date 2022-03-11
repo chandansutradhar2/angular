@@ -1,4 +1,4 @@
-<app-header [isLoggedIn]="isLoggedIn" [title]="title"></app-header>
-<app-signin></app-signin>
+<app-header (logoutSuccess)="manageSession($event)" [isLoggedIn]="isLoggedIn" [title]="title"></app-header>
+<app-signin (loginSuccess)="manageSession($event)"></app-signin>
 
 <app-footer></app-footer>

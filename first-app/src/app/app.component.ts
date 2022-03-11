@@ -11,4 +11,8 @@ export class AppComponent {
   title: string = 'Nike';
   isLoggedIn: boolean = false;
   constructor(private http: HttpClient) {}
+
+  manageSession(ev: boolean) {
+    this.isLoggedIn = ev;
+  }
 }

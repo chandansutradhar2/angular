@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-signin',
@@ -10,16 +10,15 @@ export class SigninComponent implements OnInit {
   email!: string;
   password!: string;
 
+  @Output() loginSuccess: EventEmitter<boolean> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
-  login(ev1: any, ev2: any) {
-    console.log(ev1.value, ev2.value);
-    this.email = ev1.value;
-    this.password = ev2.value;
-
-    alert('login invoked');
+  login() {
+    alert(this.email + ':' + this.password);
+    //user logged in succesfully
+    this.loginSuccess.emit(true);
   }
 
   connectToDb() {}

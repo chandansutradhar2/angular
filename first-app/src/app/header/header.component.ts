@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() isLoggedIn: boolean = false;
   @Input() title: string = '';
+  @Output() logoutSuccess: EventEmitter<boolean> = new EventEmitter();
+
   constructor() {
     console.log('isloggedIn', this.isLoggedIn);
   }
@@ -15,5 +17,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     console.log('isloggedIn', this.isLoggedIn);
     console.log('title', this.title);
+  }
+
+  logout() {
+    this.logoutSuccess.emit(false);
   }
 }

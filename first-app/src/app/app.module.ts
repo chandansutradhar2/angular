@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
