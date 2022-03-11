@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input() isLoggedIn: boolean = false;
+  @Input() title: string = '';
+  constructor() {
+    console.log('isloggedIn', this.isLoggedIn);
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('isloggedIn', this.isLoggedIn);
+    console.log('title', this.title);
+  }
 }
