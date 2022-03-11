@@ -29,6 +29,7 @@ export class SigninComponent implements OnInit {
         (res: any) => {
           if (res.result) {
             alert('token recieved:' + res.token);
+            sessionStorage.setItem('token', res.token);
           }
         },
         (err) => {
