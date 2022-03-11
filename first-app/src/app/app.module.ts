@@ -27,6 +27,18 @@ import { CartComponent } from './cart/cart.component';
 import { SocialSigninComponent } from './social-signin/social-signin.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { RouterModule, Routes } from '@angular/router';
+
+// const routes: Routes = [
+//   {
+//     path: '/cart',
+//     component: CartComponent,
+//   },
+//   {
+//     path: '/product',
+//     component: ProductDetailComponent,
+//   },
+// ];
 
 @NgModule({
   declarations: [
@@ -46,6 +58,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ProductDetailComponent,
   ],
   imports: [
+    //RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     MatInputModule,

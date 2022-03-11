@@ -4,5 +4,8 @@
     <app-signin (loginSuccess)="manageSession($event)"></app-signin>
 </div>
 
-<app-product-detail></app-product-detail>
+<div *ngIf="!showLogin">
+    <app-product-detail></app-product-detail>
+</div>
+
 <app-footer></app-footer>
