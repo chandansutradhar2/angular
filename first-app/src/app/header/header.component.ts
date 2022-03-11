@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
   @Input() isLoggedIn: boolean = false;
   @Input() title: string = '';
   @Output() logoutSuccess: EventEmitter<boolean> = new EventEmitter();
-
+  @Output() doLogin: EventEmitter<void> = new EventEmitter();
   constructor() {
     console.log('isloggedIn', this.isLoggedIn);
   }
@@ -21,5 +21,9 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.logoutSuccess.emit(false);
+  }
+
+  onLoginClicked() {
+    this.doLogin.emit();
   }
 }

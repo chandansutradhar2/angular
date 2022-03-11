@@ -10,7 +10,8 @@
     <button (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon">
         <mat-icon>logout</mat-icon>
     </button>
-    <button *ngIf="!isLoggedIn" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button (click)="onLoginClicked()" *ngIf="!isLoggedIn" mat-icon-button class="example-icon"
+        aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
     </button>
 </mat-toolbar>

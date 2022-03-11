@@ -1,4 +1,7 @@
-<app-header (logoutSuccess)="manageSession($event)" [isLoggedIn]="isLoggedIn" [title]="title"></app-header>
-<app-signin (loginSuccess)="manageSession($event)"></app-signin>
+<app-header (doLogin)="toggleLogin()" (logoutSuccess)="manageSession($event)" [isLoggedIn]="isLoggedIn" [title]="title">
+</app-header>
+<div *ngIf="showLogin">
+    <app-signin (loginSuccess)="manageSession($event)"></app-signin>
+</div>
 
 <app-footer></app-footer>
