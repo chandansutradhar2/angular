@@ -1,12 +1,44 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
+    </button> -->
+    <span>Nike</span>
+    <span>
+        <button mat-button [matMenuTriggerFor]="menMenu">Men</button>
+        <mat-menu #menMenu="matMenu" yPosition="below">
+            <button mat-menu-item [matMenuTriggerFor]="menSubMenu">Explore More</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <mat-menu #menSubMenu="matMenu">
+            <button mat-menu-item>Shoes</button>
+            <button mat-menu-item>Clothing</button>
+            <button mat-menu-item>EyeWear</button>
+            <button mat-menu-item>Latest</button>
+            <button mat-menu-item>On Sale</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="womenMenu">Women</button>
+        <mat-menu #womenMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="kidMenu">Kids</button>
+        <mat-menu #kidMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="newArrivalMenu">New Arrival</button>
+        <mat-menu #newArrivalMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
+    <app-search></app-search>
+    <app-cart></app-cart>
+
     <button (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon">
         <mat-icon>logout</mat-icon>
     </button>
@@ -14,4 +46,5 @@
         aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
     </button>
+
 </mat-toolbar>
