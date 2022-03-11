@@ -9,6 +9,6 @@ import User from './models/user.model';
 })
 export class AppComponent {
   title: string = 'Nike';
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean = false;
   constructor(private http: HttpClient) {}
 }
